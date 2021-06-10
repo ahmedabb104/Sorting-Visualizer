@@ -1,0 +1,71 @@
+#arrayContainer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	position: fixed;
+	height: 300px;
+	width: 1000px;
+	left: 50%;
+	top: 30%;
+	margin-left: -500px;
+}
+
+.arrayBar {
+	width: 30px;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin-left: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	color: var(--violet);
+	transition: 0.4s ease-in-out;
+}
+
+@media only screen and (max-width: 780px) {
+	.arrayBar {
+		width: 25px;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	.arrayBar {
+		width: 20px;
+		font-size: 0.8em;
+	}
+}
+
+@media only screen and (max-width: 580px) {
+	.arrayBar {
+		width: 15px;
+		font-size: 0.6em;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.arrayBar {
+		border: 1px solid black;
+		width: 10px;
+		color: transparent;
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	.arrayBar {
+		width: 8px;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	.arrayBar {
+		width: 7px;
+	}
+}
+
+@media only screen and (max-width: 280px) {
+	.arrayBar {
+		width: 6px;
+		margin-left: 4px;
+	}
+}
