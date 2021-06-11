@@ -1,3 +1,4 @@
+// Generates a random array of length 20
 export const newArray = () => {
 	let newArr = [];
 		for (let i = 0; i < 20; i++) {
@@ -8,32 +9,43 @@ export const newArray = () => {
 
 // ---------------- BUBBLE SORT FUNCTIONS ----------------
 
-// export const bubbleSort = (array) => {
-// 	let newArr = [...array];
-// 	for (let i = 0; i < newArr.length; i++) {
-// 		for (let j = 0; j < newArr.length - i - 1; j++) {
-// 			setTimeout(() => compareColors(j, j+1), j*500)
-// 			setTimeout(() => newArr = swapValues(newArr, j, j+1), j*100)
-// 		}
-// 	}
-// 	return newArr
-// }
+export const bubbleSort = (array, setState, setDisabled) => {
+	let newArr = [...array];
+	for (var i = 0; i < newArr.length; i++) {
+		for (let j = 0; j < newArr.length - i - 1; j++) {
+			setTimeout(() => {
+				compareColors(j, j+1) 
+			}, 1000*(i+1))
+			setTimeout(() => { 
+					newArr = swapValues(newArr, j, j+1);
+					setState(newArr);
+					resetColors(j, j+1);
+			}, 1000*(i+1)+500)
+		}
+	}
+	setTimeout(() => {
+		setDisabled(false)
+	}, 19000)
+}
 
-export const compareColors = (num1, num2) => {
+// Adds colour to the bars being compared
+const compareColors = (num1, num2) => {
 	document.getElementById(num1).style.background = 'black'
 	document.getElementById(num2).style.background = 'black'
 	document.getElementById(num1).style.color = 'white'	
 	document.getElementById(num2).style.color = 'white'	
 }
 
-export const resetColors = (num1, num2) => {
+// Resets the colours when done comparing
+const resetColors = (num1, num2) => {
 	document.getElementById(num1).style.background = 'white'
 	document.getElementById(num2).style.background = 'white'
 	document.getElementById(num1).style.color = 'var(--violet)'	
 	document.getElementById(num2).style.color = 'var(--violet)'
 }
 
-export const swapValues = (arr, num1, num2) => {
+// Swaps the values in bubble sort fashion
+const swapValues = (arr, num1, num2) => {
 	let newArr = [...arr]
 	if (newArr[num1] > newArr[num2]){
 		let temp = newArr[num1];
@@ -42,9 +54,3 @@ export const swapValues = (arr, num1, num2) => {
 	}
 	return newArr;
 }
-
-export const singleIteration = (array, setState, num1, num2, spd) => {
-	setTimeout(() => compareColors(num1, num2), 1000*spd);
-	setTimeout(() => setState(swapValues(array, num1, num2)), 2000*spd)
-	setTimeout(() => resetColors(num1, num2), 2500*spd)
-} 

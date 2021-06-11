@@ -9,6 +9,11 @@ li:hover {
 	transition: 0.3s ease-in-out;
 }
 
+.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
 #navBot {
 	height: 50px;
 	border-bottom: 1px solid #dddce7;
