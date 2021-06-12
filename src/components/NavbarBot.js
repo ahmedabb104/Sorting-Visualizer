@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as buttonFunction from './ButtonFunctions';
 import './NavbarBot.css';
 
@@ -16,14 +16,14 @@ const NavbarBot = (props) => {
 					</li>
 				</div>
 				<div id='sortingButtons' className={`controls ${disabled ? 'disabled' : ''}`}>
-					<li onClick={() => { buttonFunction.bubbleSort(props.array, props.setArray, setDisabled); setDisabled(true)}}>
+					<li onClick={() => { buttonFunction.bubbleSort(props.array, props.setCompareElements, props.setDoneElements, props.setArray, setDisabled, props.doneElements); setDisabled(true) }}>
 						Bubble
 					</li>
 					<li>
-						Insertion
+						Selection
 					</li>
 					<li>
-						Selection
+						Insertion
 					</li>
 					<li>
 						Quick
