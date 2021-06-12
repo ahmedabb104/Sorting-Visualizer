@@ -5,7 +5,7 @@ import './NavbarBot.css';
 
 const NavbarBot = (props) => {
 
-	const SPEED = 120 - props.speed;
+	const SPEED = 200 - props.speed;
 	const disabled = props.disabled;
 	const setDisabled = props.setDisabled;
 
