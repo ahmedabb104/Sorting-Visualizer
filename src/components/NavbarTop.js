@@ -25,7 +25,7 @@ const NavbarTop = (props) => {
 					Speed
 				</Typography>
 				<Slider
-					defaultValue={80}
+					defaultValue={20}
 					getAriaValueText={valuetext}
 					aria-labelledby="discrete-slider"
 					valueLabelDisplay="auto"
