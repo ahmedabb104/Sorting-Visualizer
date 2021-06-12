@@ -1,6 +1,6 @@
 #navTop {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	height: 80px;
 	border-bottom: 1px solid #dddce7;
@@ -24,9 +24,27 @@ h1 {
 	font-size: 0.8em;
 }
 
+#slider-container {
+	width: 200px;
+	margin-right: 150px;
+}
+
+#discrete-slider {
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+.disabled {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
 @media only screen and (max-width: 900px) {
 	.item-container {
 		margin-left: 80px;
+	}
+	#slider-container {
+		margin-right: 80px;
 	}
 }
 
@@ -34,9 +52,12 @@ h1 {
 	.item-container {
 		margin-left: 10px;
 	}
+	#slider-container {
+		margin-right: 10px;
+	}
 }
 
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 570px) {
 	.item-container {
 		font-size: 1.5em;
 	}

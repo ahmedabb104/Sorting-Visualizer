@@ -23,6 +23,16 @@
 	transition: 0.4s ease-in-out;
 }
 
+.compareBar {
+	background: gray;
+	color: black;
+}
+
+.doneBar {
+	background: black;
+	color: white
+}
+
 @media only screen and (max-width: 780px) {
 	.arrayBar {
 		width: 25px;

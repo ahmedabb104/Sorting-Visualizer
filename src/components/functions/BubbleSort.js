@@ -1,17 +1,7 @@
-// Generates a random array of length 20
-export const newArray = () => {
-	let newArr = [];
-		for (let i = 0; i < 20; i++) {
-			newArr.push(Math.floor(Math.random() * (50 - 5 + 1)) + 5);
-		}
-	return newArr
-}
-
 // ---------------- BUBBLE SORT FUNCTIONS ----------------
 
-export const bubbleSort = (arr, setCompareElements, setDoneElements, setState, setDisabled, doneElements) => {
+export const bubbleSort = (arr, setCompareElements, setDoneElements, setState, setDisabled, doneElements, speed) => {
 	let count = 100;
-	let speed = 100;
 	let swapped = false;
 	let i, j = 0;
 	const newArr = [...arr];

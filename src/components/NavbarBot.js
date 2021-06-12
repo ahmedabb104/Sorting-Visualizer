@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
-import * as buttonFunction from './ButtonFunctions';
+import { bubbleSort } from './functions/BubbleSort';
+import { newArray } from './functions/NewArray';
 import './NavbarBot.css';
 
 const NavbarBot = (props) => {
 
-	// Controls state of disabling the visualization controls
-	const [disabled, setDisabled] = useState(false);
+	const SPEED = props.speed;
+	const disabled = props.disabled;
+	const setDisabled = props.setDisabled;
 
 	return (
 		<>
 			<ul id='navBot'>
 				<div id='newArray' className={`controls ${disabled ? 'disabled' : ''}`}>
-					<li onClick={() => { props.setArray(buttonFunction.newArray()) }}>
+					<li onClick={() => { props.setArray(newArray()) }}>
 						New Array
 					</li>
 				</div>
 				<div id='sortingButtons' className={`controls ${disabled ? 'disabled' : ''}`}>
-					<li onClick={() => { buttonFunction.bubbleSort(props.array, props.setCompareElements, props.setDoneElements, props.setArray, setDisabled, props.doneElements); setDisabled(true) }}>
+					<li onClick={() => { bubbleSort(props.array, props.setCompareElements, props.setDoneElements, props.setArray, setDisabled, props.doneElements, SPEED); setDisabled(true) }}>
 						Bubble
 					</li>
 					<li>

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import * as buttonFunction from './ButtonFunctions';
+import { newArray } from './functions/NewArray';
 import './Visualization.css'
 
 const Visualization = (props) => {
 
 	// Resets the array whenever the page refreshes
 	useEffect(() => {
-		props.setArray(buttonFunction.newArray())
+		props.setArray(newArray())
 	}, [])
 
 	return (
@@ -14,15 +14,12 @@ const Visualization = (props) => {
 			<div id='arrayContainer'>
 				{props.array.map((val, idx) => (
 					<div 
-						className='arrayBar'
+						className={`arrayBar 
+								   ${props.compareElements.includes(idx) ? 
+								   'compareBar' : props.doneElements.includes(idx) ? 'doneBar' : ''}`}
 						key={idx}
 						id={idx}
-						style={{height: `${val*5}px`,
-								background: props.compareElements.includes(idx) ? 'gray' : 
-											props.doneElements.includes(idx) ? 'black' : 'white',
-								color: props.compareElements.includes(idx) ? 'black' : 
-									   props.doneElements.includes(idx) ? 'white' :
-									   'var(--violet)'}}>
+						style={{height: `${val*5}px`}}>
 						{val}
 					</div>
 				))}
