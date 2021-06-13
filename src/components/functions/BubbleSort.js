@@ -20,11 +20,14 @@ export const bubbleSort = (arr, setCompareElements, setDoneElements, setState, s
 			newCompareColors([], setCompareElements, setDoneElements, count, 'DEFAULT');
 			count += speed;
 		}
+		console.log(count)
 		sortedElements.push(newArr.length - i - 1);
 		newCompareColors(sortedElements, setCompareElements, setDoneElements, count, 'DONE');
 		count += speed;
+		// break out of the loop if the array is sorted
 		if (swapped === false) break;
 	}
+
 	for (let k = 0; k < newArr.length - i - 1; k++) {
 		sortedElements.push(k);
 	}
@@ -35,7 +38,7 @@ export const bubbleSort = (arr, setCompareElements, setDoneElements, setState, s
 	count += speed;
 }
 
-const newCompareColors = (elements, setCompareElements, setDoneElements, speed, action) => {
+export const newCompareColors = (elements, setCompareElements, setDoneElements, speed, action) => {
 	switch(action) {
 		case 'COMPARE':
 			setTimeout(() => {
@@ -60,17 +63,18 @@ const newCompareColors = (elements, setCompareElements, setDoneElements, speed, 
 	}
 }
 
-const newSwapValues = (arr, num1, num2, setState, speed) => {
+export const newSwapValues = (arr, num1, num2, setState, speed) => {
 	let temp = arr[num1];
 	arr[num1] = arr[num2];
 	arr[num2] = temp;
 	let newArr = [...arr];
+	console.log(newArr)
 	setTimeout(() => {
 		setState([...newArr]);
 	}, speed)
 }
 
-const unsetDisabled = (setDisabled, speed) => {
+export const unsetDisabled = (setDisabled, speed) => {
 	setTimeout(() => {
 		setDisabled(false)
 	}, speed)
