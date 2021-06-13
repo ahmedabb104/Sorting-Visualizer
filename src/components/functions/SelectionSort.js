@@ -7,7 +7,7 @@ export const selectionSort = (arr, setCompareElements, setDoneElements, setState
 	let i, j = 0;
 	let smallest;
 	const newArr = [...arr];
-	const sortedElements = [...doneElements]
+	const sortedElements = [...doneElements];
 
 	for (i = 0; i < newArr.length - 1; i++) {
 

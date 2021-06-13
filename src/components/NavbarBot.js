@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { bubbleSort } from './functions/BubbleSort';
-import { selectionSort } from './functions/SelectionSort'
+import { selectionSort } from './functions/SelectionSort';
+import { insertionSort } from './functions/InsertionSort';
 import { newArray } from './functions/NewArray';
 import './NavbarBot.css';
 
@@ -25,7 +26,7 @@ const NavbarBot = (props) => {
 					<li onClick={() => { selectionSort(props.array, props.setCompareElements, props.setDoneElements, props.setArray, setDisabled, props.doneElements, SPEED); setDisabled(true) }}>
 						Selection
 					</li>
-					<li>
+					<li onClick={() => { insertionSort(props.array, props.setCompareElements, props.setDoneElements, props.setArray, setDisabled, props.doneElements, SPEED*2.5); setDisabled(true) }}>
 						Insertion
 					</li>
 					<li>
