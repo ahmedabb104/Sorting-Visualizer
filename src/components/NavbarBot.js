@@ -29,9 +29,6 @@ const NavbarBot = (props) => {
 					<li onClick={() => { insertionSort(props.array, props.setCompareElements, props.setDoneElements, props.setArray, setDisabled, props.doneElements, SPEED*2.5); setDisabled(true) }}>
 						Insertion
 					</li>
-					<li>
-						Quick
-					</li>
 				</div>
 			</ul>
 		</>

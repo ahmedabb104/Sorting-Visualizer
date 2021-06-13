@@ -1,4 +1,4 @@
-import { newCompareColors, newSwapValues, unsetDisabled } from './BubbleSort'
+import { newCompareColors, newSwapValues, unsetDisabled } from './generalFunctions'
 
 // ---------------- INSERTION SORT FUNCTIONS ----------------
 
